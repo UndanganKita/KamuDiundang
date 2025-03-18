@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Nomor Rekening</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #b1f7fa;
+            color: #0e0a0a;
+            font-size: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 70px;
+            color: hsl(152, 34%, 15%);
+            font-weight: bold;
+            font-size: 45px;
+        }
+
+        /* Gaya Daftar Rekening */
+        .rekening-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .rekening-list li {
+            margin-bottom: 45px;
+            display: flex;
+            align-items: center;
+            padding: 45px;
+            background-color: #88b8f7;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .rekening-list li:hover {
+            transform: scale(1.30);
+        }
+
+        .rekening-list img {
+            margin-right: 20px;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .rekening-info {
+            flex-grow: 1; /* Memungkinkan info rekening mengisi ruang yang tersisa */
+        }
+
+        .rekening-info p {
+            margin: 0; /* Hilangkan margin default pada paragraf */
+        }
+
+        .rekening-info .username {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .rekening-info .account-number {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .copy-button {
+            background-color: #4CAF50; /* Warna hijau */
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .copy-button:hover {
+            background-color: #367c39; /* Warna hijau yang lebih gelap */
+        }
+
+        /* Responsif untuk Layar Kecil (Android) */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .rekening-list {
+                max-width: 100%;
+            }
+
+            .rekening-list li {
+                padding: 12px;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .rekening-list img {
+                width: 30px;
+                height: 30px;
+                margin-right: 15px;
+            }
+
+            .rekening-info .username {
+                font-size: 0.8em;
+            }
+
+            .rekening-info .account-number {
+                font-size: 1em;
+            }
+
+            .copy-button {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+        }
+
+        /* Gradasi Warna */
+        h2 {
+            background: linear-gradient(to right, hsl(249, 70%, 53%), #2980b9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Nomor Rekening Kami</h2>
+
+    <ul class="rekening-list">
+        <li>
+            <img src="img/bri.png" alt="BRI">
+            <div class="rekening-info">
+                <p class="username">a/n: EDY SAHPUTRA</p>
+                <p class="account-number">539701006110536</p>
+            </div>
+            <button class="copy-button" data-account="539701006110536">Salin</button>
+        </li>
+        <li>
+            <img src="img/dana.png" alt="Dana">
+            <div class="rekening-info">
+                <p class="username">a/n: EDY SAHPUTRA</p>
+                <p class="account-number">082367136420</p>
+            </div>
+            <button class="copy-button" data-account="082367136420">Salin</button>
+        </li>
+    </ul>
+
+    <script>
+        const copyButtons = document.querySelectorAll('.copy-button');
+
+        copyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const accountNumber = this.dataset.account;
+
+                // Salin ke clipboard
+                navigator.clipboard.writeText(accountNumber)
+                    .then(() => {
+                        // Beri tahu pengguna bahwa penyalinan berhasil
+                        alert('Nomor rekening berhasil disalin: ' + accountNumber);
+                    })
+                    .catch(err => {
+                        console.error('Gagal menyalin: ', err);
+                        alert('Gagal menyalin nomor rekening.');
+                    });
+            });
+        });
+    </script>
+
+</body>
+</html>
