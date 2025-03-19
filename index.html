@@ -150,7 +150,7 @@
 </head>
 
 <body>
-    <h3>NO.ID 0</h3>
+    <h3>Wedding Chines</h3>
     <h1>Bagikan Undangan Kamu</h1>
 
     <div class="form-container">
@@ -246,7 +246,7 @@
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('dataContainer');
-                    container.innerHTML = '<h3>Daftar Undangan</h3>';
+                    container.innerHTML = '<h3>Daftar Sudah DiUndang</h3>';
                     data.forEach(item => {
                         const p = document.createElement('p');
                         p.textContent = `${item.Waktu}: ${item.Nama_Tujuan} untuk ${item.Pengantin_Laki} & ${item.Pengantin_Perempuan}`;
