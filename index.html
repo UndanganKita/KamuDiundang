@@ -53,13 +53,15 @@
             font-size: 36px;
             text-shadow: 3px 3px 5px rgba(216, 88, 228, 0.568);
             margin-bottom: 20px;
-            color: #fff8f0;
+            color: #ff512f, #dd2476;
         }
 
         h3 {
             text-shadow: 3px 3px 5px rgba(226, 18, 18, 0.568);
-            color: #fff8f0;
             text-align: left;
+            color: #ff512f, #dd2476;
+            font-size: 30px;
+            text-align: center; 
         }
 
         .form-container {
@@ -144,13 +146,14 @@
 
             footer {
                 font-size: 12px;
+                
             }
         }
     </style>
 </head>
 
 <body>
-    <h3>Wedding Chines</h3>
+    <h3>Wedding</br>Edy & Cindy</h3>
     <h1>Bagikan Undangan Kamu</h1>
 
     <div class="form-container">
@@ -159,10 +162,9 @@
             <textarea id="kepada" placeholder="exmp: Ibu/Bpk Edy"></textarea>
 
             <label for="dari">Nama Pengantin Laki</label>
-            <input type="text" id="dari" placeholder="exmp: EDY">
+            <input type="text" id="dari" placeholder="exmp: Edy & Cindy">
 
-            <label for="dan">Nama Pengantin Perempuan</label>
-            <input type="text" id="dan" placeholder="exmp: CINDY">
+           
             
             <button type="submit">Buat link</button>
         </form>
@@ -170,7 +172,7 @@
     </div>
 
     <div class="data-container" id="dataContainer">
-        <h3>Daftar Undangan</h3>
+        <h3 style="text-align: center;">Daftar Sudah Diundang</h3>
     </div>
 
     <footer>
@@ -184,14 +186,14 @@
             // Ambil nilai input
             const kepada = encodeURIComponent(document.getElementById('kepada').value);
             const dari = encodeURIComponent(document.getElementById('dari').value);
-            const dan = encodeURIComponent(document.getElementById('dan').value);
+           
             
              // Ambil URL untuk gambar
     
 
             // Buat link dengan parameter
             const link = `https://undangankita.github.io/KamuDiundang/Data/?` +
-                `kepada=${kepada}&dari=${dari}&dan=${dan}`;
+                `kepada=${kepada}&dari=${dari}`;
                
             // Tampilkan notifikasi
             Swal.fire({
@@ -211,13 +213,11 @@
 
             const tujuan = document.getElementById('kepada').value;
             const namaLaki = document.getElementById('dari').value;
-            const namaPerempuan = document.getElementById('dan').value;
             const waktu = new Date().toLocaleString();
 
             const formData = new FormData();
             formData.append('Nama_Tujuan', tujuan);
             formData.append('Pengantin_Laki', namaLaki);
-            formData.append('Pengantin_Perempuan', namaPerempuan);
             formData.append('Waktu', waktu);
 
             fetch(scriptURL, { method: 'POST', body: formData })
@@ -246,10 +246,10 @@
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('dataContainer');
-                    container.innerHTML = '<h3>Daftar Sudah DiUndang</h3>';
+                    container.innerHTML = '<h3 style="text-align: center;">Daftar Sudah Diundang</h3>';
                     data.forEach(item => {
                         const p = document.createElement('p');
-                        p.textContent = `${item.Waktu}: ${item.Nama_Tujuan} untuk ${item.Pengantin_Laki} & ${item.Pengantin_Perempuan}`;
+                        p.textContent = `${item.Waktu}: To: ${item.Nama_Tujuan} dari ${item.Pengantin_Laki}`;
                         container.appendChild(p);
                     });
                 })
