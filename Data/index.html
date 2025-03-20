@@ -3072,281 +3072,342 @@
 											data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}"
 											data-widget_type="heading.default">
 											<div class="elementor-widget-container">
-												<style>
-													/* untuk pesan */
-													
+											<style>
+													/* Style dasar */
+													body {
+														font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+														background-color: #f7f7f7;
+														margin: 0;
+														padding: 0;
+														line-height: 1.6;
+
+													}
 
 													.container {
-														margin-top: 35px;
+														max-width: 500px;
+														margin: 15px auto;
+														padding: 15px;
+														background-color: #f35685;
+														border-radius: 10px;
+														box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 													}
 
-													.table-container {
-														font-size: 1.2rem;
-														width: 90%;
-														background-color: #fff;
-														background-image: url('#');
-														background-size: cover;
-														padding: 2px;
-														border-radius: 7px;
-														box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+													/* Gaya Formulir */
+													.form-container {
+														padding: 20px;
+														border-radius: 10px;
+														margin-bottom: 20px;
+														box-shadow: 0 4px 8px rgba(255, 252, 252, 0.952);
+														/* Efek bayangan ditingkatkan */
 													}
 
-													.table {
-														border-collapse: separate;
-														border-spacing: 0 12px;
+													.form-group {
+														margin-bottom: 20px;
 													}
 
 													label {
-														font-weight: bold;
-														color: #121213;
-													}
-
-													h2 {
-														font-weight: bold;
-														color: #bb1c1cb4;
-													}
-
-													.table th {
-														background-color: #6c5ce7;
-														color: #eccccc;
-														font-weight: bold;
+														display: block;
+														margin-bottom: 8px;
+														font-weight: 500;
+														color: #0c0b0b;
 														text-align: center;
-														padding: 7px;
-														border: none;
-														width: 85%;
 													}
 
-													.table td {
-														background-color: #f1f2f6;
-														padding: 7px;
+													input[type="text"],
+													textarea,
+													select {
+														width: 100%;
+														padding: 12px;
+														border: 1px solid #ddd;
+														border-radius: 5px;
+														box-sizing: border-box;
+														font-size: 16px;
+														margin-top: 5px;
+														transition: border-color 0.2s;
+														box-shadow: 0 2px 4px rgb(255, 252, 252);
+														/* Efek bayangan pada input */
 														text-align: center;
-														vertical-align: middle;
+													}
+
+													input[type="text"]:focus,
+													textarea:focus,
+													select:focus {
+														border-color: #07e9b1;
+														outline: none;
+														box-shadow: 0 3px 6px rgb(255, 252, 252);
+														/* Efek bayangan ditingkatkan saat fokus */
+													}
+
+													button[type="submit"] {
+														background-color: #09df7b;
+														color: white;
+														font-weight: bold;
+														padding: 14px 24px;
 														border: none;
-														border-bottom: 1px solid #dcdde1;
-														color: #050505;
-														width: 85%;
+														border-radius: 5px;
+														cursor: pointer;
+														font-size: 18px;
+														width: 100%;
+														transition: background-color 0.2s;
+														box-shadow: 0 2px 4px rgb(241, 234, 234);
+														/* Efek bayangan pada tombol */
 													}
 
-													.table tbody tr:hover td {
-														background-color: #dfe6e9;
-														transition: all 0.3s ease-in-out;
-														
+													button[type="submit"]:hover {
+														background-color: #1257eb;
 													}
 
-													.table tbody tr {
-														border-radius: 7px;
+													.alert {
+														padding: 12px 15px;
+														border-radius: 5px;
+														margin-top: 20px;
+													}
+
+													.alert-success {
+														background-color: #d4edda;
+														color: #16ec44;
+														border: 1px solid #c3e6cb;
+													}
+
+													/* Gaya Tampilan Data dalam Kolom */
+													.data-container {
+														max-height: 300px;
+														overflow-y: auto;
+														padding-right: 10px;
+														display: flex;
+														flex-direction: column;
+														background-color: #0b88ee;
+														/* Warna latar belakang yang lebih menarik */
+														border-radius: 10px;
+														padding: 15px;
+													}
+
+													.data-item {
+														display: flex;
+														align-items: center;
+														background-color: #8eece0;
+														border-bottom: 1px solid #eee;
+														padding: 15px;
+														margin-bottom: 10px;
+														border-radius: 5px;
+														box-shadow: 0 1px 3px rgb(255, 252, 252);
+													}
+
+													.data-item:last-child {
+														border-bottom: none;
+														margin-bottom: 0;
+													}
+
+													.avatar {
+														width: 50px;
+														height: 50px;
+														border-radius: 45%;
+														background-color: #ff67ba;
+														color: rgb(2, 40, 255);
+														font-size: 20px;
+														font-weight: bold;
+														display: flex;
+														align-items: center;
+														justify-content: center;
+														margin-right: 10px;
 														overflow: hidden;
-														
 													}
 
-													.table-striped tbody tr:nth-of-type(odd) td {
-														background-color: #f8f9fa;
+													.data-item-details {
+														flex: 1;
 													}
 
-													.text-header {
+													.data-item-details strong {
 														font-weight: bold;
-														font-size: 1rem;
-														color: #6c5ce7;
+														margin-right: 5px;
+														color: #0b88ee
 													}
 
-													.text-highlight {
-														font-weight: bold;
-														color: rgb(31, 32, 32);
+													.data-item-details>div {
+														margin-bottom: 5px;
 													}
 
-													/* Responsif untuk layar kecil */
-													@media (max-width: 768px) {
-														.text-header {
-															font-size: 1.2rem;
+													.data-item-details>div:last-child {
+														margin-bottom: 0;
+													}
+
+													/* Responsif */
+													@media (max-width: 600px) {
+														.container {
+															padding: 15px;
 														}
 
-														.table-container {
-															padding: 6px;
+														.form-container {
+															padding: 15px;
 														}
 
-														.table th,
-														.table td {
-															font-size: 0.7rem;
-															padding: 4px;
+														input[type="text"],
+														textarea,
+														select {
+															font-size: 14px;
+														}
+
+														button[type="submit"] {
+															font-size: 16px;
+														}
+
+														.data-item {
+															flex-direction: column;
+															/* Susun data item secara vertikal pada layar kecil */
+															align-items: flex-start;
+															/* Rata kiri pada layar kecil */
+														}
+
+														.avatar {
+															margin-bottom: 10px;
+															/* Margin bawah avatar pada layar kecil */
+															margin-right: 0;
+															/* Hilangkan margin kanan avatar pada layar kecil */
 														}
 													}
 												</style>
-												<!-- PESAN -->
-												<div class="form-container">
-													<h2 style="color:#fcfeff; font-size: 25px;" class="text-center">Form Kehadiran</h2>
-													<form id="attendanceForm">
-														<div class="form-group">
-															<label for="nama">Nama:</label>
-															<input type="text" id="nama" name="nama"
-																class="form-control" required>
+												</head>
+
+												<body>
+
+													<div class="container">
+														<div class="form-container">
+															<h2 style="text-align:center; color: rgb(11, 112, 243); text-shadow: 0 2px 4px hsla(197, 100%, 99%, 0.993); font-size: 35px;"
+																class="text-center">Form Kehadiran</h2>
+															<form id="attendanceForm">
+																<div class="form-group">
+																	<label for="nama">Nama:</label>
+																	<input type="text" id="nama" name="nama"
+																		class="form-control" required>
+																</div>
+																<div class="form-group">
+																	<label for="ucapan">Ucapan:</label>
+																	<textarea id="ucapan" name="ucapan"
+																		class="form-control" rows="4" required>
+</textarea>
+																</div>
+																<div class="form-group">
+																	<label for="hadir">Kehadiran:</label>
+																	<select id="hadir" name="hadir" class="form-control"
+																		required>
+																		<option value="">Pilih Kehadiran</option>
+																		<option value="Hadir">Hadir</option>
+																		<option value="Tidak Hadir">Tidak Hadir</option>
+																	</select>
+																</div>
+																<button type="submit"
+																	class="btn btn-primary btn-block">Kirim</button>
+															</form>
+															<div id="notif" class="alert alert-success mt-3"
+																style="text-align: center; color: hsl(0, 0%, 97%); text-shadow: 0 2px 4px rgba(174, 4, 253, 0.993); display: none;">
+																Data berhasil dikirim!
+															</div>
 														</div>
-														<div class="form-group">
-															<label for="ucapan">Ucapan:</label>
-															<textarea id="ucapan" name="ucapan" class="form-control"
-																rows="3" required></textarea>
+													</br></br>
+														<h2	style="text-align: center; color: rgb(0, 102, 255); text-shadow: 0 2px 4px hsla(197, 100%, 99%, 0.993); font-size: 35px;">
+															Data Kehadiran</h2>
+														</br>
+
+														<div class="data-container" id="dataContainer">
+															<!-- Data akan muncul di sini -->
 														</div>
-														<div class="form-group">
-															<label for="hadir">Kehadiran:</label>
-															<select id="hadir" name="hadir" class="form-control"
-																required>
-																<option value="">Pilih Kehadiran
-																</option>
-																<option value="Hadir">Hadir</option>
-																<option value="Tidak Hadir">Tidak Hadir
-																</option>
-															</select>
-														</div>
-														<button type="submit"
-															class="btn btn-primary btn-block">Kirim</button>
-													</form>
-													<div id="notif" class="alert alert-success mt-3"
-														style="display: none;">Data
-														berhasil dikirim!
-													   </div>
-												      </div>
-												    									
-												       <script>
-													document.getElementById("attendanceForm").addEventListener("submit", function (e) {
-														e.preventDefault();
+													</div>
 
-														const nama = document.getElementById("nama").value;
-														const ucapan = document.getElementById("ucapan").value;
-														const hadir = document.getElementById("hadir").value;
 
-														const scriptURL = "https://script.google.com/macros/s/AKfycbybLYFl1Vzx_TSLf1ZoSGZHuqz2dzGBmYNZJxaN8B5zVFRwtOH9vfQMVEOSQbFsB0OL/exec"; // Replace with your Apps Script URL
-														const formData = new FormData();
-														formData.append("nama", nama);
-														formData.append("ucapan", ucapan);
-														formData.append("hadir", hadir);
+													<script>
+														const scriptURL = 'https://script.google.com/macros/s/AKfycbybLYFl1Vzx_TSLf1ZoSGZHuqz2dzGBmYNZJxaN8B5zVFRwtOH9vfQMVEOSQbFsB0OL/exec'; // Ganti dengan URL Apps Script Anda
+														const form = document.getElementById('attendanceForm');
+														const notif = document.getElementById('notif');
+														const dataContainer = document.getElementById('dataContainer');
 
-														fetch(scriptURL, { method: "POST", body: formData })
-															.then(response => {
-																document.getElementById("notif").style.display = "block";
-																document.getElementById("attendanceForm").reset();
-															})
-															.catch(error => console.error("Error!", error.message));
-													});
+														let allData = [];
 
-													const fetchData = () => {
-														const scriptURL = "https://script.google.com/macros/s/AKfycbybLYFl1Vzx_TSLf1ZoSGZHuqz2dzGBmYNZJxaN8B5zVFRwtOH9vfQMVEOSQbFsB0OL/exec"; // Replace with your Apps Script URL
-														fetch(scriptURL)
-															.then(response => response.json())
-															.then(data => {
-																let totalUcapan = 0;
-																let totalHadir = 0;
+														form.addEventListener('submit', (e) => {
+															e.preventDefault();
+															const formData = new FormData(form);
 
-																data.forEach(row => {
-																	totalUcapan += 1;
-																	if (row.hadir === "Hadir") {
-																		totalHadir += 1;
+															fetch(scriptURL, { method: 'POST', body: formData })
+																.then(response => {
+																	if (!response.ok) {
+																		throw new Error(`HTTP error! status: ${response.status}`);
 																	}
-																});
+																	notif.style.display = 'block';
+																	form.reset();
+																	fetchData();
+																	setTimeout(() => {
+																		notif.style.display = 'none';
+																	}, 3000);
+																})
+																.catch(error => console.error('Error!', error.message));
+														});
 
-																// Update elemen HTML
-																document.getElementById("totalUcapan").textContent = `🔵 ${totalUcapan} Total Ucapan`;
-																document.getElementById("totalHadir").textContent = `🟢 ${totalHadir} Orang Menyatakan Hadir`;
+														const fetchData = () => {
+															fetch(scriptURL)
+																.then(response => response.json())
+																.then(data => {
+																	allData = data;
+																	updateDataContainer();
+																})
+																.catch(error => console.error('Error fetching data:', error));
+														};
 
-																const tableBody = document.getElementById("dataBody");
-																tableBody.innerHTML = ""; // Kosongkan tabel sebelum menambahkan data baru
+														const updateDataContainer = () => {
+															dataContainer.innerHTML = '';
 
-																data.forEach(row => {
-																	const waktu = formatTimeAgo(new Date(row.timestamp)); // Format waktu relatif
-																	const newRow = ` <tr>
-																		 <td class="text-highlight">${waktu}</td>
-																		 <td>${row.nama}</td>
-																		 <td>${row.ucapan}</td>
-																		 <td>${row.hadir}</td>
-																		 </tr> `;
-																	tableBody.innerHTML += newRow;
-																});
-															})
-															.catch(error => console.error("Error fetching data:", error));
-													};
+															allData.forEach(row => {
+																const waktu = formatTimeAgo(new Date(row.timestamp));
+																const dataItem = document.createElement('div');
+																dataItem.classList.add('data-item');
 
-													// Fungsi untuk menghitung waktu relatif
-													const formatTimeAgo = (date) => {
-														const now = new Date();
-														const secondsAgo = Math.floor((now - date) / 1000);
+																const avatar = document.createElement('div');
+																avatar.classList.add('avatar');
+																avatar.textContent = row.nama.charAt(0).toUpperCase(); // Ambil inisial nama
 
-														if (secondsAgo < 60) return "Baru saja";
-														const minutesAgo = Math.floor(secondsAgo / 60);
-														if (minutesAgo < 60) return `${minutesAgo} menit yang lalu`;
-														const hoursAgo = Math.floor(minutesAgo / 60);
-														if (hoursAgo < 24) return `${hoursAgo} jam yang lalu`;
-														const daysAgo = Math.floor(hoursAgo / 24);
-														if (daysAgo < 7) return `${daysAgo} hari yang lalu`;
-														const weeksAgo = Math.floor(daysAgo / 7);
-														if (weeksAgo < 4) return `${weeksAgo} minggu yang lalu`;
-														return date.toLocaleDateString(); // Tanggal penuh jika lebih dari 1 bulan
-													};
+																const dataItemDetails = document.createElement('div');
+																dataItemDetails.classList.add('data-item-details');
 
-													// Muat data pertama kali
-													fetchData();
+																dataItemDetails.innerHTML = `
+																		<div><strong>Nama:</strong> ${row.nama}</div>
+																		<div><strong>Ucapan:</strong> ${row.ucapan}</div>
+																		<div><strong>Kehadiran:</strong> ${row.hadir}</div>
+																		<div><strong>Waktu:</strong> ${waktu}</div>
+																	`;
 
-													// Perbarui data setiap 5 detik
-													setInterval(fetchData, 5000);
+																dataItem.appendChild(avatar);
+																dataItem.appendChild(dataItemDetails);
+																dataContainer.appendChild(dataItem);
+															});
+														};
 
-												</script>
-												<script type="text/javascript">
-													window.fluent_form_ff_form_instance_4_1 = { "id": "4", "settings": { "layout": { "labelPlacement": "top", "helpMessagePlacement": "with_label", "errorMessagePlacement": "inline", "cssClassName": "", "asteriskPlacement": "asterisk-right" }, "restrictions": { "denyEmptySubmission": { "enabled": false } } }, "form_instance": "ff_form_instance_4_1", "form_id_selector": "fluentform_4", "rules": { "input_text": { "required": { "value": true, "message": "This field is required" } }, "dropdown": { "required": { "value": true, "message": "This field is required" } }, "dropdown_1": { "required": { "value": true, "message": "This field is required" } } } };
-												</script>
+														const formatTimeAgo = (date) => {
+															const now = new Date();
+															const secondsAgo = Math.floor((now - date) / 1000);
 
+															if (secondsAgo < 60) return 'Baru saja';
+															const minutesAgo = Math.floor(secondsAgo / 60);
+															if (minutesAgo < 60) return `${minutesAgo} menit yang lalu`;
+															const hoursAgo = Math.floor(minutesAgo / 60);
+															if (hoursAgo < 24) return `${hoursAgo} jam yang lalu`;
+															const daysAgo = Math.floor(hoursAgo / 24);
+															if (daysAgo < 7) return `${daysAgo} hari yang lalu`;
+															const weeksAgo = Math.floor(daysAgo / 7);
+															if (weeksAgo < 4) return `${weeksAgo} minggu yang lalu`;
+															return date.toLocaleDateString();
+														};
+
+														fetchData();
+													</script>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</section>
-						<section
-							class="elementor-section elementor-inner-section elementor-element elementor-element-fce8565 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default wdp-sticky-section-no"
-							data-id="fce8565" data-element_type="section"
-							data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false}">
-							<div class="elementor-background-overlay"></div>
-							<div class="elementor-container elementor-column-gap-default">
-								<div data-dce-background-color="#9F1611C4"
-									class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-e48b8ac wdp-sticky-section-no"
-									data-id="e48b8ac" data-element_type="column"
-									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-									<div class="elementor-widget-wrap elementor-element-populated">
-										<div class="elementor-element elementor-element-6908fce animated-slow wdp-sticky-section-no elementor-invisible elementor-widget elementor-widget-heading"
-										data-id="6908fce" data-element_type="widget"
-										data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}"
-										data-widget_type="heading.default">
-											
-											<div class="elementor-widget-container">
-											<div class="container">
-												      <h2 style="font-size: 25px; color: #dde4ee"
-														class="text-center mb-4">Data Kehadiran</h2>
-													</br>
-													<div class="table-container">
-														<span id="totalUcapan" class="total-ucapan-ucapan">🔵 0 Total
-															Ucapan</span><br>
-														<span id="totalHadir" class="total-hadir-ucapan">🟢 0 Orang
-															Menyatakan Hadir</span>
-														<table class="table table-bordered">
-															<thead>
-																<tr>
-																	<th>Timestamp</th>
-																	<th>Nama</th>
-																	<th>Ucapan</th>
-																	<th>Kehadiran</th>
-																</tr>
-															</thead>
-															<tbody id="dataBody">
-																<!-- Data akan muncul di sini -->
-															</tbody>
-														</table>	
-													    </div>
-										                         </div>
-								                                     </div>																						
-									                     </div>
-										      </div>
-								             </div>
-							            </div>
-					                </div>
-				           </div>
-			         </div>		
-		       </section>
+					</div>
+				</div>
+			</div>
+		</br> </br>
+	
+		</section>
 						
 		      <section data-dce-background-color="#9F1611"
 			class="elementor-section elementor-top-section elementor-element elementor-element-deddbc1 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no"
@@ -3784,10 +3845,6 @@
 		}
 
 	</script>
-
-
-
-
 
 	<script src="./index_files/dialog.min.js.download"></script>
 	<script src="./index_files/share-link.min.js.download"></script>
