@@ -3077,212 +3077,294 @@
 											data-widget_type="heading.default">
 											<div class="elementor-widget-container">
 												<style>
-													body {
-														font-family: 'Nunito', sans-serif;
-														background-color: #ebafcd;
-														margin: 0;
-														padding: 0;
-														line-height: 1.6;
-														display: flex;
-														justify-content: center;
-														align-items: center;
-														min-height: 100vh;
-													       }
+    /* Style Dasar */
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #ebafcd;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
 
-													.container {
-														max-width: 768px;
-														/* Lebar container ditingkatkan */
-														padding: 20px;
-														background-color: rgba(255, 255, 255, 0.9);
-														/* Sedikit lebih buram */
-														border-radius: 15px;
-														box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-														/* Bayangan lebih kuat */
-														backdrop-filter: blur(7px);
-														/* Blur ditingkatkan */
-														transition: transform 0.3s ease-in-out;
-													}
+    .container {
+        width: 95%;  /* Mengisi sebagian besar layar */
+        max-width: 600px; /* Lebar maksimum */
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(7px);
+        transition: transform 0.3s ease-in-out;
+    }
 
-													.container:hover {
-														transform: translateY(-5px);
-														/* Efek melayang saat dihover */
-													}
+    .container:hover {
+        transform: translateY(-5px);
+    }
 
-													/* Gaya Formulir */
-													.form-container {
-														padding: 20px;
-														border-radius: 15px;
-														margin-bottom: 30px;
-														box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-													}
+    /* Gaya Formulir */
+    .form-container {
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
 
-													.form-group {
-														margin-bottom: 25px;
-													}
+    .form-group {
+        margin-bottom: 25px;
+    }
 
-													label {
-														display: block;
-														margin-bottom: 10px;
-														font-weight: bold;
-														color: #0e0d0d;
-														text-align: left;
-													}
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #0e0d0d;
+        text-align: left;
+    }
 
-													input[type="text"],
-													textarea,
-													select {
-														width: 95%;
-														padding: 16px;
-														border: 1px solid #ccc;
-														border-radius: 10px;
-														box-sizing: border-box;
-														font-size: 16px;
-														margin-top: 8px;
-														transition: border-color 0.3s ease;
-													}
+    input[type="text"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 14px; /* Padding dikurangi sedikit */
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-size: 14px; /* Font size dikurangi sedikit */
+        margin-top: 8px;
+        transition: border-color 0.3s ease;
+    }
 
-													input[type="text"]:focus,
-													textarea:focus,
-													select:focus {
-														border-color: #7957d4;
-														outline: none;
-														box-shadow: 0 3px 8px rgba(121, 87, 212, 0.3);
-													}
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+        border-color: #7957d4;
+        outline: none;
+        box-shadow: 0 3px 8px rgba(121, 87, 212, 0.3);
+    }
 
-													button[type="submit"] {
-														background-color: #d45757;
-														color: white;
-														font-weight: bold;
-														padding: 15px 30px;
-														border: none;
-														border-radius: 10px;
-														cursor: pointer;
-														font-size: 18px;
-														width: 100%;
-														transition: background-color 0.3s ease;
-													}
+    button[type="submit"] {
+        background-color: #d45757;
+        color: white;
+        font-weight: bold;
+        padding: 14px 28px; /* Padding dikurangi sedikit */
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px; /* Font size dikurangi sedikit */
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
 
-													button[type="submit"]:hover {
-														background-color: #be3c7d;
-													}
+    button[type="submit"]:hover {
+        background-color: #be3c7d;
+    }
 
-													.alert {
-														padding: 18px 22px;
-														border-radius: 10px;
-														margin-top: 25px;
-														text-align: center;
-														font-weight: bold;
-													}
+    .alert {
+        padding: 16px 20px;  /* Padding dikurangi sedikit */
+        border-radius: 10px;
+        margin-top: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
 
-													.alert-success {
-														background-color: #e6f9ec;
-														color: #2ca05b;
-														border: 1px solid #b8e5c8;
-													}
+    .alert-success {
+        background-color: #e6f9ec;
+        color: #2ca05b;
+        border: 1px solid #b8e5c8;
+    }
 
-													/* Gaya Tampilan Data */
-													.data-container {
-														padding: 8px;
-														background-color: rgba(255, 255, 255, 0.85);
-														border-radius: 10px;
-														box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
-														backdrop-filter: blur(6px);
-														overflow-x: auto;
-														overflow-y: auto;
-														max-height: 450px;
-														/* Tinggi maksimum ditingkatkan */
-														perspective: 450px;
-														/* Penting untuk efek 3D */
-													}
+    /* Gaya Tampilan Data */
+    .data-container {
+        padding: 10px; /* Padding dikurangi sedikit */
+        background-color: rgba(255, 255, 255, 0.85);
+        border-radius: 10px;
+        box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6px);
+        overflow-x: auto;
+        overflow-y: auto;
+        max-height: 400px; /* Tinggi maksimum */
+        perspective: 500px;  /* Pengaturan perspektif untuk efek 3D */
+    }
 
-													.data-table {
-														width: 95%;
-														border-collapse: separate;
-														/* Penting untuk efek border-radius */
-														border-spacing: 0;
-														margin-bottom: 20px;
-														transform-style: preserve-3d;
-														/* Penting untuk efek 3D pada seluruh tabel */
-													}
+    .data-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin-bottom: 20px;
+        transform-style: preserve-3d;
+    }
 
-													.data-table th,
-													.data-table td {
-														padding: 10px 10px;
-														text-align: center;
-														border-bottom: 1px solid #eee;
-														background-color: rgb(248, 233, 239);
-														position: relative;
-														font-size: 12px;
-														color:#171c1d
-													}
+    .data-table th,
+    .data-table td {
+        padding: 8px 10px; /* Padding dikurangi sedikit */
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        background-color: rgb(248, 233, 239);
+        position: relative;
+        font-size: 12px;
+        color: #171c1d;
+        word-break: break-word; /* Mencegah teks panjang merusak tata letak */
+    }
 
-													.data-table th {
-														background-color: #f8f9fa;
-														font-weight: bold;
-														color: #030303;
-														text-transform: uppercase;
-														letter-spacing: 0.5px;
-													}
+    .data-table th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+        color: #030303;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 
-													/* Efek 3D pada Baris */
-													.data-table tbody tr {
-														transition: transform 0.3s ease, box-shadow 0.3s ease;
-													}
+    /* Efek 3D pada Baris */
+    .data-table tbody tr {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-													.data-table tbody tr:hover {
-														transform: translateY(-3px) translateZ(10px);
-														box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-														background-color: rgba(255, 255, 255, 0.9);
-													}
+    .data-table tbody tr:hover {
+        transform: translateY(-3px) translateZ(10px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.9);
+    }
 
-													/* Style Avatar */
-													.data-table .avatar {
-														width: 45px;
-														height: 45px;
-														border-radius: 45%;
-														background-color: #f5c6c6;
-														color: #050505;
-														font-size: 20px;
-														font-weight: bold;
-														display: flex;
-														align-items: center;
-														justify-content: center;
-														overflow: hidden;
-														margin: 0 auto;
-														box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-													}
+    /* Style Avatar */
+    .data-table .avatar {
+        width: 40px;  /* Ukuran avatar dikurangi sedikit */
+        height: 40px;  /* Ukuran avatar dikurangi sedikit */
+        border-radius: 40%;
+        background-color: #f5c6c6;
+        color: #050505;
+        font-size: 16px;  /* Font size dikurangi sedikit */
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin: 0 auto;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-													/* Styling untuk sudut border */
-													.data-table th:first-child {
-														border-top-left-radius: 12px;
-													}
+    /* Styling untuk sudut border */
+    .data-table th:first-child {
+        border-top-left-radius: 12px;
+    }
 
-													.data-table th:last-child {
-														border-top-right-radius: 12px;
-													}
+    .data-table th:last-child {
+        border-top-right-radius: 12px;
+    }
 
-													.data-table tbody tr:last-child td:first-child {
-														border-bottom-left-radius: 12px;
-													}
+    .data-table tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 12px;
+    }
 
-													.data-table tbody tr:last-child td:last-child {
-														border-bottom-right-radius: 12px;
-													}
+    .data-table tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 12px;
+    }
 
-													h2 {
-														text-align: center;
-														color: #343a40;
-														margin-bottom: 40px;
-														font-size: 2.5rem;
-														font-weight: bold;
-														letter-spacing: 1px;
-													}
+    h2 {
+        text-align: center;
+        color: #343a40;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
 
-													
-												</style>
-												<link
-													href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
-													rel="stylesheet">
+    /* Media Query untuk Layar Sangat Kecil (Penting untuk HP low-end) */
+    @media (max-width: 360px) {
+        .container {
+            padding: 10px;  /* Padding lebih kecil untuk layar sangat kecil */
+        }
+
+        .form-container {
+            padding: 10px;  /* Padding lebih kecil untuk layar sangat kecil */
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            font-size: 12px;  /* Font size lebih kecil untuk layar sangat kecil */
+            padding: 10px; /* Padding lebih kecil untuk layar sangat kecil */
+        }
+
+        button[type="submit"] {
+            font-size: 14px;  /* Font size lebih kecil untuk layar sangat kecil */
+            padding: 10px 20px; /* Padding lebih kecil untuk layar sangat kecil */
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 6px 8px; /* Padding lebih kecil untuk layar sangat kecil */
+            font-size: 10px; /* Font size lebih kecil untuk layar sangat kecil */
+        }
+
+        .data-table .avatar {
+            width: 35px;  /* Ukuran avatar lebih kecil untuk layar sangat kecil */
+            height: 35px;  /* Ukuran avatar lebih kecil untuk layar sangat kecil */
+            font-size: 14px;  /* Font size avatar lebih kecil untuk layar sangat kecil */
+        }
+
+        h2 {
+            font-size: 1.6rem; /* Font size h2 lebih kecil untuk layar sangat kecil */
+            margin-bottom: 20px;  /* Margin bottom h2 lebih kecil untuk layar sangat kecil */
+        }
+
+        .alert {
+            font-size: 12px;  /* Font size alert lebih kecil untuk layar sangat kecil */
+            padding: 12px 15px; /* Padding alert lebih kecil untuk layar sangat kecil */
+        }
+    }
+
+    /* Media Query untuk Perangkat Seluler Umum */
+    @media (min-width: 361px) and (max-width: 768px) {
+        .container {
+            padding: 15px; /* Padding sedang untuk layar seluler */
+        }
+
+        .form-container {
+            padding: 15px; /* Padding sedang untuk layar seluler */
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            font-size: 13px;  /* Font sedang untuk layar seluler */
+            padding: 12px;  /* Padding sedang untuk layar seluler */
+        }
+
+        button[type="submit"] {
+            font-size: 15px;  /* Font sedang untuk layar seluler */
+            padding: 12px 24px;  /* Padding sedang untuk layar seluler */
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 7px 9px;  /* Padding sedang untuk layar seluler */
+            font-size: 11px;  /* Font sedang untuk layar seluler */
+        }
+
+        .data-table .avatar {
+            width: 38px;   /* Ukuran avatar sedang untuk layar seluler */
+            height: 38px;   /* Ukuran avatar sedang untuk layar seluler */
+            font-size: 15px;  /* Font avatar sedang untuk layar seluler */
+        }
+
+        h2 {
+            font-size: 1.8rem; /* Font h2 sedang untuk layar seluler */
+        }
+
+        .alert {
+             font-size: 13px;  /* Font sedang untuk layar seluler */
+            padding: 14px 18px; /* Padding alert lebih kecil untuk layar sangat kecil */
+        }
+    }
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 												</head>
 
 												<body>
