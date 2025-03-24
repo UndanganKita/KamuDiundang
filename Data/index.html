@@ -3278,31 +3278,44 @@
 														letter-spacing: 1px;
 													}
 
-													/* Responsif */
-													@media (max-width: 768px) {
-														.container {
-															padding: 15px;
-														}
+													 /* Responsif */
+        @media (max-width: 576px) { /* Breakpoint lebih kecil */
+            .container {
+                padding: 15px;
+            }
 
-														.form-container {
-															padding: 20px;
-														}
+            .form-container {
+                padding: 15px;
+            }
 
-														input[type="text"],
-														textarea,
-														select {
-															font-size: 10px;
-														}
+            input[type="text"],
+            textarea,
+            select {
+                font-size: 12px; /* Ukuran font dikurangi */
+                padding: 12px; /* Ukuran padding dikurangi */
+            }
 
-														button[type="submit"] {
-															font-size: 17px;
-														}
+            button[type="submit"] {
+                font-size: 14px; /* Ukuran font dikurangi */
+                padding: 12px 24px; /* Ukuran padding dikurangi */
+            }
 
-														.data-table th,
-														.data-table td {
-															padding: 9px 10px;
-														}
-													}
+            .data-table th,
+            .data-table td {
+                padding: 6px 8px; /* Ukuran padding dikurangi */
+                font-size: 10px; /* Ukuran font dikurangi */
+            }
+
+            .data-table .avatar {
+                width: 35px; /* Ukuran avatar dikurangi */
+                height: 35px; /* Ukuran avatar dikurangi */
+                font-size: 14px; /* Ukuran font avatar dikurangi */
+            }
+
+            h2 {
+                font-size: 1.8rem; /* Ukuran font dikurangi */
+            }
+        }
 												</style>
 												<link
 													href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
