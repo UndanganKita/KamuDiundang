@@ -1835,9 +1835,48 @@
     <meta name="msapplication-TileImage" content="img/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <script src="./index_files/wp-emoji-release.min.js.download" defer=""></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">    
 </head>
 
+<style>
+    /* PERBAIKAN GALERI GESER KHUSUS UNTUK HP */
+    @media (max-width: 767px) {
+        /* Mematikan efek kaku dari JS bawaan Elementor */
+        .elementor-element-edb7025 .swiper-wrapper {
+            transform: none !important;
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            scroll-behavior: smooth !important;
+            padding-bottom: 20px !important;
+            
+            /* Sembunyikan scrollbar */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .elementor-element-edb7025 .swiper-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Mengatur ukuran gambar agar pas di tengah dan bisa ngintip kiri-kanan */
+        .elementor-element-edb7025 .swiper-slide {
+            width: 80vw !important; /* Lebar gambar 80% dari layar HP */
+            flex-shrink: 0 !important;
+            scroll-snap-align: center !important;
+            margin-right: 15px !important;
+            opacity: 1 !important;
+        }
+
+        /* Mengatur agar gambarnya proporsional */
+        .elementor-element-edb7025 .swiper-slide img {
+            width: 100% !important;
+            border-radius: 12px !important; /* Ujung gambar sedikit melengkung agar elegan */
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3); /* Tambahan bayangan */
+        }
+    }
+</style>
+    
 <body
     class="post-template post-template-elementor_canvas single single-post postid-7485 single-format-standard wp-embed-responsive right-sidebar nav-float-right separate-containers header-aligned-left dropdown-hover elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-7485 e--ua-blink e--ua-chrome e--ua-webkit"
     style="overflow: visible;" data-elementor-device-mode="desktop">
